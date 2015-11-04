@@ -17,6 +17,8 @@ The initial unit of diversion to the conrol and experiments groups is a cookie. 
 **Invariant Metrics:** number of cookies, number of clicks
 **Evaluation Metrics:** gross conversion, retention, net conversion
 
+<p style='color:blue'>This is some blue text.</p>
+
 
 For each metric, explain both why you did or did not use it as an invariant metric and why you did or did not use it as an evaluation metric. Also, state what results you will look for in your evaluation metrics in order to launch the experiment.
 **Number of Cookies:** The number of unique cookies to visit the course overview page.  This is the unit of diversion and even distribution amongst the control and experiment groups is expected.
