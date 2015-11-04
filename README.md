@@ -1,6 +1,7 @@
 # Udacity AB Testing Final Project
 
-## Experiment Design
+## Experiment Description
+
 At the time of the experiment described herein, the Udacity course home pages have two options: "start free trial" and "access course materials."  Clicking "start free trial" prompts the user to enter their credit card information, subsequently enrolling them in a 14 day free trial of the course, after which they are automatically charged.  Users who click "access course materials" will be able to view course content but receive no coaching support, verified certificate, or project feedback.  
 
 For this experiment Udacity tested a change wherein those users who clicked "start free trial" were asked how much time they were willing to devote to the course.  Users choosing 5 or more hours per week would be taken through the checkout process as usual.  For users indicating fewer than 5 hours per week a message would appear indicating the need for a greater time requirement to be succesful in the course and suggesting they might like to access the free content.  At this point the student would hae the option to continue enrolling in the free trial or access the course materials for free.  
@@ -14,10 +15,8 @@ The rationale for this change is that diverting students as a function of time t
 The initial unit of diversion to the conrol and experiments groups is a cookie.  However, once a student enroll in the free trial they are tracked by user-id.  The same user-id can't enroll more than once.  Users who don't enroll are not tracked by user-id.
 
 ### Metric Choice
-**Invariant Metrics:** number of cookies, number of clicks
-**Evaluation Metrics:** gross conversion, retention, net conversion
-
-<p style='color:blue'>This is some blue text.</p>
+_**Invariant Metrics:** number of cookies, number of clicks_
+_**Evaluation Metrics:** gross conversion, retention, net conversion_
 
 
 For each metric, explain both why you did or did not use it as an invariant metric and why you did or did not use it as an evaluation metric. Also, state what results you will look for in your evaluation metrics in order to launch the experiment.
