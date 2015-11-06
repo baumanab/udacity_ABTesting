@@ -116,11 +116,23 @@ A 119 day experiment with 100% diversion of traffic presents both a business ris
 
 
 ## Experiment Analysis
-Sanity Checks
-For each of your invariant metrics, give the 95% confidence interval for the value you expect to observe, the actual observed value, and whether the metric passes your sanity check. (These should be the answers from the "Sanity Checks" quiz.)
+
+The experimental data can be found in the following links:
+
+- [experiment group](Final Project Results - Control.csv)
+- [control group](Final Project Results - Experiment.csv)
+
+### Sanity Checks
+
+For invariant metrics we expect equal diversion into the experiment and control group.  We will test this at the 95% confidence interval.
+
+| Metric | Expected Value | Observed Value | CI Lower Bound | CI Upper Bound | Result |
+|:------:|:--------------:|:--------------:|:--------------:|:--------------:|:------:|
+| Number of Cookies | 0.5000 | 0.5006 | 0.4988 | 0.5012 | Pass |
+| Number of clicks on "start free trial" | 0.5000 | 0.5005 | 0.4959 | 0.5042 | Pass |
 
 
-For any sanity check that did not pass, explain your best guess as to what went wrong based on the day-by-day data. Do not proceed to the rest of the analysis unless all sanity checks pass.
+
 
 
 ## Result Analysis
