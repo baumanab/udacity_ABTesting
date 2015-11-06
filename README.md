@@ -43,10 +43,8 @@ Evaluation metrics were chosen since there is the possibility of different distr
 
 
 ## Measuring Standard Deviation
-List the standard deviation of each of your evaluation metrics. (These should be the answers from the "Calculating standard deviation" quiz.)
 
-
-For each of your evaluation metrics, indicate whether you think the analytic estimate would be comparable to the the empirical variability, or whether you expect them to be different (in which case it might be worth doing an empirical estimate if there is time). Briefly give your reasoning in each case.
+**_Analytical Estimate of Standard Deviation_**
 
 | Evaluation Metric | Standard Deviation |
 |:-------------------:|:--------------------:|
@@ -54,21 +52,67 @@ For each of your evaluation metrics, indicate whether you think the analytic est
 | Retention         | .0549 |
 | Net Conversion    | .0156 |
 
-
+The analtytical estimate of standard devation tends to be near the empircally determined standard deviation for those cases in which the unit of diversion is equal to the unit of analysis.  This is the case for Gross Conversion and Net Conversion, but not Retention.  If we do ultimately decide to use Retention, then we should calculate the empericaly variability.
 
 
 ## Sizing
 
+The following calcations are based on [baseline conversion data](data/baseline_vals.csv).
+
 
 ### Number of Samples vs. Power
-Indicate whether you will use the Bonferroni correction during your analysis phase, and give the number of pageviews you will need to power you experiment appropriately. (These should be the answers from the "Calculating Number of Pageviews" quiz.)
+To reduce the complexity of this analysis my intial approach will not deploy the Bonferroni correction.  Pageviews required for each metric were calculated using an alpha value of 0.05 and beta value of 0.2.
+
+**_Pageviews for Each Evaluation Metric to Achieve Target Statistial Power_**
+
+#### Gross Conversion
+
+- Baseline Conversion: 20.625%
+- Minimum Detectable Effect: 1%
+- alpha: 5%
+- beta: 20%
+- 1 - beta: 80%
+- sample size = 25,835 enrollments/group
+- Number of groups = 2 (experiment and control)
+- total sample size =  51,670 enrollments
+- clicks/pageview: 3200/40000 = .08 clicks/pageview
+- pageviews = 645,875
+
+
+
+#### Retention
+
+- Baseline Conversion: 53%
+- Minimum Detectable Effect: 1%
+- alpha: 5%
+- beta: 20%
+- 1 - beta: 80%
+- sample size = 39,155 enrollments/group
+- Number of groups = 2 (experiment and control)
+- total sample size = 78,230 enrollments
+- enrollments/pageview: 660/40000 = .0165 enrollments/pageview
+- pageviews = 78,230/.0165 = 4,741,212
+
+#### Net Conversion
+
+- Baseline Conversion: 10.9313%
+- Minimum Detectable Effect: .75%
+- alpha: 5%
+- beta: 20%
+- 1 - beta: 80%
+- sample size = 27,413 enrollments/group
+- Number of groups = 2 (experiment and control)
+- total sample size = 54,826
+- clicks/pageview: 3200/40000 = .08 clicks/pageview
+- pageviews = 685,325
+
+_Pageviews Required:  4,741,212_
 
 
 ### Duration vs. Exposure
-Indicate what fraction of traffic you would divert to this experiment and, given this, how many days you would need to run the experiment. (These should be the answers from the "Choosing Duration and Exposure" quiz.)
+If we divert 100% off traffic, given 40,000 page views per day, the experiment would take ~ 119 days.  If we eliminate retention, we are left with Gross Conversion and Net Conversion.  This reduces the number of required pageviews to 685,325, and an ~ 18 day experiment with 100% diversion and ~ 35 days give 50% diversion.  
 
-
-Give your reasoning for the fraction you chose to divert. How risky do you think this experiment would be for Udacity?
+A 119 day experiment with 100% diversion of traffic presents both a business risk (potential for: frustrated students, lower conversion and retention, and inefficient use of coaching resources) and an opportunity risk (performing other experiments).  An 18 day experiment is more reasonable, but % diversion may be scaled down depending on other experiments of interest to be performed concurrently.
 
 
 ## Experiment Analysis
