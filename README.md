@@ -49,7 +49,7 @@ List the standard deviation of each of your evaluation metrics. (These should be
 For each of your evaluation metrics, indicate whether you think the analytic estimate would be comparable to the the empirical variability, or whether you expect them to be different (in which case it might be worth doing an empirical estimate if there is time). Briefly give your reasoning in each case.
 
 | Evaluation Metric | Standard Deviation |
-|-------------------|--------------------|
+|:-------------------:|:--------------------:|
 | Gross Conversion  | .0202 |
 | Retention         | .0549 |
 | Net Conversion    | .0156 |
