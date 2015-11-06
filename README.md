@@ -119,8 +119,8 @@ A 119 day experiment with 100% diversion of traffic presents both a business ris
 
 The experimental data can be found in the following links:
 
-- [experiment group](Final Project Results - Control.csv)
-- [control group](Final Project Results - Experiment.csv)
+- [experiment group](Final Project Results - Experiment.csv)
+- [control group](Final Project Results - Control.csv)
 
 ### Sanity Checks
 
