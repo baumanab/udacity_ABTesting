@@ -119,8 +119,8 @@ A 119 day experiment with 100% diversion of traffic presents both a business ris
 
 The experimental data can be found in the following links:
 
-- [experiment group](Final Project Results - Experiment.csv)
-- [control group](Final Project Results - Control.csv)
+- [experiment group](data/Final Project Results - Experiment.csv)
+- [control group](data/Final Project Results - Control.csv)
 
 ### Sanity Checks
 
@@ -136,16 +136,28 @@ For invariant metrics we expect equal diversion into the experiment and control 
 
 
 ## Result Analysis
-Effect Size Tests
-For each of your evaluation metrics, give a 95% confidence interval around the difference between the experiment and control groups. Indicate whether each metric is statistically and practically significant. (These should be the answers from the "Effect Size Tests" quiz.)
+
+95% Confidence interval for the difference between the experiment and control group for evaluation metrics.
+
+| Metric | dmin | Observed Difference | CI Lower Bound | CI Upper Bound | Result |
+|:------:|:--------------:|:--------------:|:--------------:|:--------------:|:------:|
+| Gross Conversion | 0.01 | -0.0205 | -.0291 | -.0120 | Satistically and Practically Significant |
+| Net Conversion | 0.0075 | -0.0048 | -0.0116 | 0.0019 | Neither Statistically nor Practically Significant |
 
 
 ## Sign Tests
-For each of your evaluation metrics, do a sign test using the day-by-day data, and report the p-value of the sign test and whether the result is statistically significant. (These should be the answers from the "Sign Tests" quiz.)
+
+| Metric | p-value for sign test | Statistically Significant @ alpha .05? |
+|:------:|:--------------:|:--------------:|
+| Gross Conversion | 0.0026 | Yes |
+| Net Conversion | 0.6776 | No |
+
 
 
 ## Summary
 State whether you used the Bonferroni correction, and explain why or why not. If there are any discrepancies between the effect size hypothesis tests and the sign tests, describe the discrepancy and why you think it arose.
+Since I ultimately chose only two invariant and two evalution metrics, I chose not to use the Bonferroni correction for simplicity's sake.
+
 
 
 ## Recommendation
