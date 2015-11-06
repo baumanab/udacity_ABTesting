@@ -135,7 +135,7 @@ For invariant metrics we expect equal diversion into the experiment and control 
 
 
 
-## Result Analysis
+### Result Analysis
 
 95% Confidence interval for the difference between the experiment and control group for evaluation metrics.
 
@@ -145,7 +145,7 @@ For invariant metrics we expect equal diversion into the experiment and control 
 | Net Conversion | 0.0075 | -0.0048 | -0.0116 | 0.0019 | Neither Statistically nor Practically Significant |
 
 
-## Sign Tests
+### Sign Tests
 
 | Metric | p-value for sign test | Statistically Significant @ alpha .05? |
 |:------:|:--------------:|:--------------:|
@@ -155,8 +155,9 @@ For invariant metrics we expect equal diversion into the experiment and control 
 
 
 ## Summary
-State whether you used the Bonferroni correction, and explain why or why not. If there are any discrepancies between the effect size hypothesis tests and the sign tests, describe the discrepancy and why you think it arose.
-Since I ultimately chose only two invariant and two evalution metrics, I chose not to use the Bonferroni correction for simplicity's sake.
+An experiment was conducted in which potential Udacity students were diverted by cookie into two groups, experiment and control.  The experiment group was asked to input the amount of time they were willing to devote to study after clicking a "start free trial button", whereas the control group was not.  Two invariant metrics (Number of Cookies, Number of clicks on "start free trial") were chosen for purposes of validation and sanity checking while Gross Conversion (enrollment/cookie) and Net Conversion (payments/cookie) served as evaluation metrics.  The null hypothesis is that there would be no difference in the evaluation metrics between the groups, futhermore, a practical signifcance threshold was set for each metric.  
+
+Despite this experiment using multiple metrics, since only two invariant and two evalution metrics were employed, I chose to forgo the Bonferroni correction for simplicity's sake.  Subsequent analysis revealed the expected equal distribution of cookies into the control and experimental groups, for the invariant metrics, at the 95% CI.  Gross conversion was found to be statistically signficant at the 95% CI, and the null hypothesis was rejected in favor of the alternative hypothesis.  Gross conversion also met the practical signficance threshold.  Net Conversion was found to be neither statistically or practically signficant at the 95% CI.     
 
 
 
