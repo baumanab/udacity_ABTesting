@@ -75,7 +75,7 @@ The following calcations are based on [baseline conversion data](data/baseline_v
 ### Number of Samples vs. Power
 To reduce the complexity of this analysis my intial approach will not deploy the Bonferroni correction.  Pageviews required for each metric were calculated using an alpha value of 0.05 and beta value of 0.2.
 
-**_Pageviews for Each Evaluation Metric to Achieve Target Statistial Power_**
+**_Pageviews for Each Evaluation Metric to Achieve Target Statistical Power_**
 
 #### Gross Conversion
 
