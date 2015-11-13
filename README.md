@@ -14,8 +14,9 @@ The rationale for this change is that diverting students as a function of time t
 ## Experiment Design
 The initial unit of diversion to the conrol and experiment groups is a unique cookie.  However, once a student enrolls in the free trial, they are tracked by user-id.  The same user-id can't enroll more than once.  Users who don't enroll are not tracked by user-id.  Note that the uniqueness of a cookie is determined per day.
 
+
 ### Metric Choice
-_**Invariant Metrics:** number of cookies, number of clicks_
+_**Invariant Metrics:** number of cookies, number of clicks, click-through-probability_
 
 _**Evaluation Metrics:** gross conversion, retention, net conversion_
 
@@ -26,11 +27,18 @@ Invariant metrics were chosen due to their expected property of being....well, i
 
 **Number of Cookies:** The number of unique cookies to visit the course overview page.  This is the unit of diversion and even distribution amongst the control and experiment groups is expected.  It is therefore appropriate as an invariant metric.
 
-**Number of Clicks:** The number of users (tracked as unique cookies at this stage) to click the free trial buttion. This is appropriate as an invariant metric but not an evaluation metrice.  Equal distribution amongst the experiment and control groups would be expected since at this point in the funnell the experience is the same for all users and therefore elements of the experiment would not be expected to impact clicking the "start free trial" button.    
+**Number of Clicks:** The number of users (tracked as unique cookies at this stage) to click the free trial buttion. This is appropriate as an invariant metric but not an evaluation metrice.  Equal distribution amongst the experiment and control groups would be expected since at this point in the funnel the experience is the same for all users and therefore elements of the experiment would not be expected to impact clicking the "start free trial" button.    
+
+**Click-through-probability:** Unique cookies to click the "start free trial" button per unique cookies to view the course overview page. Equal distribution amongst the experiment and control groups would be expected since at this point in the funnel the experience is the same for all users and therefore elements of the experiment would not be expected to impact clicking the "start free trial" button.    
+ 
 
 #### Evaluation Metrics
 
-Evaluation metrics were chosen since there is the possibility of different distributions between experiment and control groups as a function of the experiment.  Each evaluation metric is associated with a minimum difference (dmin) that must be observed for consideration in the decision to launch the experiment.  There are constructs and elements at play that would be impacted upon making the change being evaluated in the experiment, not measured by the experiemnt (e.g. student frustration/satisfaction, effective use of limited coaching resources).  Therefore the minium barrier to consider making a change is meeting or exceeding dmin for one evaluation metric.  If this threshold is reached followup experiments my be considered prior to making any changes.  
+Evaluation metrics were chosen since there is the possibility of different distributions between experiment and control groups as a function of the experiment.  Each evaluation metric is associated with a minimum difference (dmin) that must be observed for consideration in the decision to launch the experiment. The ultimate goal is to minimize student frustration and satisfaction and to most effectively use limited coaching resources.  Cancelling early may be one indication of frustration or low satisfaction and the more students enrolled in the course who do not make at least one payment, much less finish the course, the less coaching resources are being used effectively.  With this in mind, in order to consider launching the experiment either of the following must be observed:
+
+- Increased retention (more students staying beyond the free trial in the experiment group)
+- Decreased Gross conversion coupled to increased net conversion (less stuents enrolling in the free trial but more students staying beyond the free trial)
+
 
 **Gross Conversion:**  This is the number of user-ids to complete checkout and enroll in the free trial per unique cookie to click the "start free trial" button.  dmin = 0.01
 
@@ -39,6 +47,10 @@ Evaluation metrics were chosen since there is the possibility of different distr
 
 
 **Net Conversion:** this is the number of user-ids to remain enrolled past the 14 day trial, making at least one payment, per the number of unique cookies to click the "start free trial" button.  dmin = 0.0075
+
+#### Unused Metrics
+
+**Number of user-ids:** The number of users to enroll in the free trial.  This metric is neither suitable as an invariant or evaluation metric.  User-ids are tracked only after enrolling in the free trial and equal distribution between the control and experimental branches would not be expected.  As an evaluation metric this quantity does not track to an outcome that helps us determine whether to launch or not.  
 
 
 
@@ -130,6 +142,7 @@ For invariant metrics we expect equal diversion into the experiment and control 
 |:------:|:--------------:|:--------------:|:--------------:|:--------------:|:------:|
 | Number of Cookies | 0.5000 | 0.5006 | 0.4988 | 0.5012 | Pass |
 | Number of clicks on "start free trial" | 0.5000 | 0.5005 | 0.4959 | 0.5042 | Pass |
+| Click-through-probability | 0.0821 | 0.0822 | 0.0812 | 0.0830 | Pass | 
 
 
 
