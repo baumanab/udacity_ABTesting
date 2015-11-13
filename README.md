@@ -37,7 +37,7 @@ Invariant metrics were chosen due to their expected property of being....well, i
 Evaluation metrics were chosen since there is the possibility of different distributions between experiment and control groups as a function of the experiment.  Each evaluation metric is associated with a minimum difference (dmin) that must be observed for consideration in the decision to launch the experiment. The ultimate goal is to minimize student frustration and satisfaction and to most effectively use limited coaching resources.  Cancelling early may be one indication of frustration or low satisfaction and the more students enrolled in the course who do not make at least one payment, much less finish the course, the less coaching resources are being used effectively.  With this in mind, in order to consider launching the experiment either of the following must be observed:
 
 - Increased retention (more students staying beyond the free trial in the experiment group)
-- Decreased Gross conversion coupled to increased net conversion (less stuents enrolling in the free trial but more students staying beyond the free trial)
+- Decreased Gross Conversion coupled to increased Net Conversion (less stuents enrolling in the free trial but more students staying beyond the free trial)
 
 
 **Gross Conversion:**  This is the number of user-ids to complete checkout and enroll in the free trial per unique cookie to click the "start free trial" button.  dmin = 0.01
@@ -73,7 +73,7 @@ The following calcations are based on [baseline conversion data](data/baseline_v
 
 
 ### Number of Samples vs. Power
-To reduce the complexity of this analysis my intial approach will not deploy the Bonferroni correction.  Pageviews required for each metric were calculated using an alpha value of 0.05 and beta value of 0.2.
+My intial approach will not deploy the Bonferroni correction, that decision will be made based on my final choice of evaluation metrics and associated criteria. Pageviews required for each metric were calculated using an alpha value of 0.05 and beta value of 0.2.
 
 **_Pageviews for Each Evaluation Metric to Achieve Target Statistical Power_**
 
@@ -122,9 +122,9 @@ _Pageviews Required:  4,741,212_
 
 
 ### Duration vs. Exposure
-If we divert 100% off traffic, given 40,000 page views per day, the experiment would take ~ 119 days.  If we eliminate retention, we are left with Gross Conversion and Net Conversion.  This reduces the number of required pageviews to 685,325, and an ~ 18 day experiment with 100% diversion and ~ 35 days give 50% diversion.  
+If we divert 100% of traffic, given 40,000 page views per day, the experiment would take ~ 119 days.  If we eliminate retention, we are left with Gross Conversion and Net Conversion.  This reduces the number of required pageviews to 685,325, and an ~ 18 day experiment with 100% diversion and ~ 35 days given 50% diversion.  
 
-A 119 day experiment with 100% diversion of traffic presents both a business risk (potential for: frustrated students, lower conversion and retention, and inefficient use of coaching resources) and an opportunity risk (performing other experiments).  An 18 day experiment is more reasonable, but % diversion may be scaled down depending on other experiments of interest to be performed concurrently.
+A 119 day experiment with 100% diversion of traffic presents both a business risk (potential for: frustrated students, lower conversion and retention, and inefficient use of coaching resources) and an opportunity risk (performing other experiments).  However, in general, this is not a risky experiment as the change would not be expected to cause a precipitous drop in enrollment.  In terms of timing, an 18 day experiment is more reasonable, but % diversion may be scaled down depending on other experiments of interest to be performed concurrently.
 
 
 ## Experiment Analysis
@@ -145,9 +145,6 @@ For invariant metrics we expect equal diversion into the experiment and control 
 | Click-through-probability | 0.0821 | 0.0822 | 0.0812 | 0.0830 | Pass | 
 
 
-
-
-
 ### Result Analysis
 
 95% Confidence interval for the difference between the experiment and control group for evaluation metrics.
@@ -165,20 +162,15 @@ For invariant metrics we expect equal diversion into the experiment and control 
 | Gross Conversion | 0.0026 | Yes |
 | Net Conversion | 0.6776 | No |
 
-
-
 ## Summary
-An experiment was conducted in which potential Udacity students were diverted by cookie into two groups, experiment and control.  The experiment group was asked to input the amount of time they were willing to devote to study after clicking a "start free trial button", whereas the control group was not.  Two invariant metrics (Number of Cookies, Number of clicks on "start free trial") were chosen for purposes of validation and sanity checking while Gross Conversion (enrollment/cookie) and Net Conversion (payments/cookie) served as evaluation metrics.  The null hypothesis is that there would be no difference in the evaluation metrics between the groups, futhermore, a practical signifcance threshold was set for each metric. 
+An experiment was conducted in which potential Udacity students were diverted by cookie into two groups, experiment and control.  The experiment group was asked to input the amount of time they were willing to devote to study after clicking a "start free trial button", whereas the control group was not.  Three invariant metrics (Number of Cookies, Number of clicks on "start free trial", and click-through-probability) were chosen for purposes of validation and sanity checking while Gross Conversion (enrollment/cookie) and Net Conversion (payments/cookie) served as evaluation metrics.  The null hypothesis is that there would be no difference in the evaluation metrics between the groups, futhermore, a practical signifcance threshold was set for each metric.  The requirement for launching the experiment is that the null hypothesis must be rejected for ALL evaluation metrics and that the difference between branches must meet or exceed the practical signficance threshold.  Because our acceptance criteria requires statiscally signifcant differences for ALL evaluation metrics, the use of the Bonferonni correction is not appropriate.  The Bonferonni correction is a method of controlling for type I errors (false positives) when using multiple metrics in which relevance of ANY of the metrics matches the hypothesis.  In this case the risk of type I errors increases as the number of metrics increases (signifcance by random chance).  In our case in which ALL metrics must be relevant to launch, the risk of type II errors (false negatives) increases as the number of metrics increases, so it stands to reason that controlling for false positives is not consitent with our acceptance criteria. 
 
-Despite this experiment using multiple metrics, since only two invariant and two evalution metrics were employed, I chose to forgo the Bonferroni correction for simplicity's sake.  Subsequent analysis revealed the expected equal distribution of cookies into the control and experimental groups, for the invariant metrics, at the 95% CI.  Gross conversion was found to be statistically signficant at the 95% CI, and the null hypothesis was rejected in favor of the alternative hypothesis.  Gross conversion also met the practical signficance threshold.  Net Conversion was found to be neither statistically nor practically signficant at the 95% CI.     
-
-Note that traffic was diverted at 100% for 23 days, sufficient for the chosen evaluation metrics.  
-
+Analysis revealed the expected equal distribution of cookies into the control and experimental groups, for the invariant metrics, at the 95% CI.  A differennce in gross conversion was found to be statistically signficant at the 95% CI, and the null hypothesis was rejected.  Gross conversion also met the practical signficance threshold.  Net Conversion was found to be neither statistically nor practically signficant at the 95% CI.     
 
 
 ## Recommendation
 
-As stated previously, the rationale for this change is that diverting students as a function of time to devote to study might improve the overall student experience and the coaches' capacity to support students who are likely to complete the course, without significantly reducing the number of students who continue past the free trial.  Therefore, the first approximation is essentially, "do no harm."  A statistically and practically signficant increase in Gross Conversion was observed while no differences in Net Conversion were observed.  The experiments aren't appropriate to measure "student frustration" or similiar constructs, but we can at least say that in the short term we haven't caused a decrease in payments and have an uptick on enrollments.  It is tempting to launch the experiment, but the results actually give me pause.  We have more students enrolling, but less paying.  That means we have an increase in enrollment not coupled to an increase in students staying for the requisite 14 days to trigger payment.  To me that does not suggest improvement, but rather we may be worse than where we started, since you have more students using coaching resources but not necessarily completing the courses.  What may be more informative is Retention.  Since Net Conversion has "cookies" in the denominator and cookie uniqueness is determined per day, we may be diluting the effect.  Retention uses user-id in the denominator so this may give us a more specific indication of how succesful the experiment is.  
+As stated previously, the rationale for this change is that diverting students as a function of time to devote to study might improve the overall student experience and the coaches' capacity to support students who are likely to complete the course, without significantly reducing the number of students who continue past the free trial. A statistically and practically signficant decrease in Gross Conversion was observed while no differences in Net Conversion were observed.  The experiments aren't appropriate to measure "student frustration" or similiar constructs, but we can at least say that the experiment decreased enrollment without causing a decrease in payments .  It is tempting to launch the experiment, but the results actually give me pause.  We have more students enrolling, but less paying.  That means we have an increase in enrollment not coupled to an increase in students staying for the requisite 14 days to trigger payment.  To me that does not suggest improvement, but rather we may be worse than where we started, since you have more students using coaching resources but not necessarily completing the courses.  What may be more informative is Retention.  Since Net Conversion has "cookies" in the denominator and cookie uniqueness is determined per day, we may be diluting the effect.  Retention uses user-id in the denominator so this may give us a more specific indication of how succesful the experiment is.  
 
 My reccomendation is not to launch yet, but to re-evaluate whether or not to pursue the more resource intensive Retention experiment in the context of other company priorities and resource allocation.  Another, more effcient option is to perform additonal experiments, described below.
 
