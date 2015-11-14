@@ -52,7 +52,7 @@ Evaluation metrics were chosen since there is the possibility of different distr
 
 #### Unused Metrics
 
-**Number of user-ids:** The number of users to enroll in the free trial.  This metric is neither suitable as an invariant or evaluation metric.  User-ids are tracked only after enrolling in the free trial and equal distribution between the control and experimental branches would not be expected.  As an evaluation metric this quantity does not track to an outcome that helps us determine whether to launch or not.  
+**Number of user-ids:** The number of users to enroll in the free trial.  This is not a suitable invariant metric and while it could be used as an evalution metric, it is not ideal.  User-ids are tracked only after enrolling in the free trial and equal distribution between the control and experimental branches would not be expected.  User-id count could be used to evaluate how many enrollments stayed beyond the 14 day free trial boundary, but since it isn't normalized, I have elected not to use it.  
 
 
 ## Measuring Standard Deviation
