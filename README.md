@@ -178,4 +178,17 @@ The construct of student frustration could be assigned an operational definition
 
 The first opportunity for intervention was explored above wherein a poll regarding time commitment was used as to filter out students likely to become frustrated.  This filter focused only on time commitment to the class and did not address other reasons why a student might become frustrated and cancel early. Even if the student was sincere in their response and dilligent in their study, they may become frustrated if they don't have the suggested pre-requisite skills and experience.  That is, their committed time may not be enough if they don't come in with the pre-requisite skill set.  Adding a checklist of pre-requisite skills to the popup regarding time commitment may be informative.  This experiment would leverage the infrastrucure and data pipeline of the original experiment and be set up in the same way as the original, including the unit of diversion.  The only difference would be the information in the form.  If the student's answer meets the time and pre-requisite requirements (radiobox checklist) they are directed to enroll in the paid version, otherwise they are encouraged to use the free version.  This experiment would be low cost in terms of resources and may increase the selectivity of the pre-enrollment filter.  A succesful experiment would be one in which there is a signficant decrease in Gross Conversion coupled to an increase in Net Conversion.
 
-A variety of approaches could be used to intervene post-enrollment but pre-payment.  An ideal approach would be one which minimizes the use of addtional coaching resources.
+A variety of approaches could be used to intervene post-enrollment but pre-payment and could be deployed concurrently with pre-enrollment intervention.  An ideal approach would be one which minimizes the use of additional coaching resources to best meet the original intent of the intervention.  An effective approach may be to employ peer coaching/guidance by means of team formation.  If a student has a team of other students upon which they could consult, discuss coursework and frustrations with, and be accountable to, they may be more likely to stick out the growing pains and stay for the long term.  The experiment would function in the following manner.
+
+**Setup:** Upon enrollment students will either be randomly assigned to a control group in which they are not funnelled into a team, or an experiment group in which they are.
+
+**Null Hypothesis:** Participation in a team will not increase the number of students enrolled beyond the 14 day free trial period by a significant amount.
+
+**Unit of Diversion:** The unit of diversion will be user-id as the change takes place after a student creates an account and enrolls in a course.
+
+**Invariant Metrics:**  The invariant metric will be user-id, since an equal distribution between experiment and control would be expected as a property of the setup.
+
+**Evaluation Metrics:** The evaluation metric willl be Retention.  A statistically and practically significant increase in Retention would indicate that the change is succesful.
+
+If a statistically and practically signifcant positive change in Retention is observed, assuming an acceptable impact on overall Udacity resources (setting up and maintaining teams will require resource use), the experiment will be launched.
+
