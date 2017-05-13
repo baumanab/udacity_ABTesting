@@ -7,7 +7,7 @@ At the time of the experiment described herein, the Udacity course home pages ha
 For this experiment Udacity tested a change wherein those users who clicked "start free trial" were asked how much time they were willing to devote to the course.  Users choosing 5 or more hours per week would be taken through the checkout process as usual.  For users indicating fewer than 5 hours per week a message would appear indicating the need for a greater time commitment to enable success and suggesting they might like to access the free content.  At this point the student would have the option to continue enrolling in the free trial or access the course materials for free.  
 This screenshot shows the experiment:
 
-![Experiment Screenshot](Final Project- Experiment Screenshot.png)
+![Experiment Screenshot](Final Project-Experiment Screenshot.png)
 
 The rationale for this change is that diverting students as a function of time to devote to study might improve the overall student expereince and the coaches' capacity to support students who are likely to complete the course, without significantly reducing the number of students who continue past the free trial.
 
